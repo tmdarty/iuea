@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Staff(models.Model):
     staff_name = models.CharField(max_length=25)
     contact = models.CharField(max_length=25)
@@ -14,6 +15,7 @@ class Staff(models.Model):
 
 class Department(models.Model):
     dept_name = models.CharField(max_length=25)
+    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
 
 class Courses(models.Model):
     course_name = models.CharField(max_length=25)
